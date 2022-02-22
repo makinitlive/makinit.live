@@ -1,6 +1,7 @@
 import React from 'react'
 import tw from 'twin.macro'
 import { jsx, css, keyframes } from '@emotion/react'
+import { Seo } from './../components/'
 
 const spin = keyframes`
   0% {
@@ -15,8 +16,6 @@ const spin = keyframes`
 const Logo = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="612"
-    height="110"
     viewBox="0 0 612 110"
     tw="w-full"
   >
@@ -45,7 +44,7 @@ const Arrow = () => (
     strokeMiterlimit="2"
     clipRule="evenodd"
     viewBox="0 0 232 74"
-    tw="max-width[232px]">
+    tw="ml-8 max-width[232px] width[25%]">
     <g transform="scale(.12083 .06167)">
       <path fill="none" d="M0 0H1920V1200H0z"></path>
       <g fill="#fff">
@@ -62,64 +61,67 @@ const Arrow = () => (
   </svg>
 )
 const IndexPage = () => (
-  <div tw="h-screen relative overflow-hidden p-24">
-    <div tw="relative z-50 mx-auto grid grid-cols-2 gap-8 h-full items-center">
-      <div>
-        <div tw="w-64">
-          <Logo />
-        </div>
-        <div>
-          <h1 tw="font-display font-bold text-white text-6xl mb-4">
-            Streaming experiments in&nbsp;design&nbsp;and&nbsp;code
-          </h1>
-          <p tw="max-w-2xl text-white text-2xl">
-            makin’ it live is an experiment by Brett to try livestreaming web stuff... for fun.
-          </p>
-          <div tw="space-x-4 flex mt-8">
-            <a tw="block text-xl px-4 py-2 border-white border-2 text-white font-bold border-opacity-50 rounded-lg shadow" href="twitch.tv/brettjay">
-              Twitch
-            </a>
-            <a tw="block text-xl px-4 py-2 border-white border-2 text-white font-bold border-opacity-50 rounded-lg shadow" href="https://github.com/makinitlive/">
-              Github
-            </a>
+  <>
+    <Seo
+      title="Streaming experiments in design and code – makinit.live"
+      description="Streaming experiments in design and code"
+    />
+    <div tw="min-h-screen relative overflow-hidden p-4 md:(p-12) lg:(h-screen p-8) xl:(p-16) 2xl:(p-24)">
+      <div tw="relative z-50 mx-auto grid gap-8 lg:(grid-cols-2 grid-rows-1 gap-8 items-center) h-full max-w-screen-2xl">
+        <div tw="order-2 p-4 lg:(p-0 order-1)">
+          <div tw="w-40 md:w-64 mb-6">
+            <Logo />
           </div>
-          
-        </div>
-      </div>
-      <div>
-        <div tw="padding-top[56.25%] relative rounded-lg overflow-hidden shadow-lg ">
-          <iframe
-            src="https://player.vimeo.com/video/680257424?h=e9cb07b3ac&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullscreen
-            style={{
-              position: `absolute`,
-              top: 0,
-              left: 0,
-              width: `100%`,
-              height: `100%`,
-            }}
-            title="Stream overlay demo"
-          />
+          <div>
+            <h1 tw="font-display font-bold text-white text-3xl md:text-4xl lg:text-6xl mb-4">
+              Streaming experiments in design&nbsp;and&nbsp;code
+            </h1>
+            <div tw="space-x-4 flex mt-10">
+              <a tw="block text-xl px-8 py-4 bg-white border-white bg-opacity-10 text-white font-bold rounded-xl backdrop-blur-3xl bg-blend-overlay shadow-lg transition hover:(bg-opacity-20)" href="https://twitch.tv/brettjay">
+                Twitch
+              </a>
+              <a tw="block text-xl px-8 py-4 bg-white border-white bg-opacity-10 text-white font-bold rounded-xl backdrop-blur-3xl bg-blend-overlay shadow-lg transition hover:(bg-opacity-20)" href="https://github.com/makinitlive">
+                Github
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div tw="flex items-center text-white justify-center mt-4">
-          <Arrow />
-          <p tw="w-52 pt-4 ml-4 text-sm font-medium">
-            See a demo of the stream overlay built with Next.js
-          </p>
+        <div tw="order-1 self-end lg:(order-2 self-center)">
+          <div tw="padding-top[56.25%] relative rounded-lg overflow-hidden shadow-lg ">
+            <iframe
+              src="https://player.vimeo.com/video/680257424?h=e9cb07b3ac&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullscreen
+              style={{
+                position: `absolute`,
+                top: 0,
+                left: 0,
+                width: `100%`,
+                height: `100%`,
+              }}
+              title="Stream overlay demo"
+            />
+          </div>
+
+          <div tw="flex items-center text-white justify-center mt-1">
+            <Arrow />
+            <p tw="w-52 pt-4 ml-4 text-sm font-medium">
+              See a demo of the stream overlay built with Next.js
+            </p>
+          </div>
+          
+          <script src="https://player.vimeo.com/api/player.js"></script>
         </div>
-        
-        <script src="https://player.vimeo.com/api/player.js"></script>
       </div>
+      <div
+        tw="absolute z-0 inset-0 transform origin-center background-image[radial-gradient(100.69% 260.8% at 100.69% 0%, #32C5FF 0%, #B620E0 50.52%, #F7B500 100%)]"
+        css={css`
+          animation: ${spin} 100s ease infinite;
+        `}/>
     </div>
-    <div
-      tw="absolute z-0 inset-0 transform origin-center background-image[radial-gradient(100.69% 260.8% at 100.69% 0%, #32C5FF 0%, #B620E0 50.52%, #F7B500 100%)]"
-      css={css`
-        animation: ${spin} 100s ease infinite;
-      `}/>
-  </div>
+  </>
 )
 
 export default IndexPage
