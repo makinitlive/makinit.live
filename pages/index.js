@@ -66,17 +66,17 @@ const IndexPage = () => (
       title="Streaming experiments in design and code – makinit.live"
       description="Streaming experiments in design and code"
     />
-    <div tw="min-h-screen relative overflow-hidden p-4 md:(p-12) lg:(h-screen p-8) xl:(p-16) 2xl:(p-24)">
+    <div tw="absolute inset-0 sm:(relative min-h-screen) overflow-hidden p-4 md:(p-12) lg:(h-screen p-8) xl:(p-16) 2xl:(p-24)">
       <div tw="relative z-50 mx-auto grid gap-8 lg:(grid-cols-2 grid-rows-1 gap-8 items-center) h-full max-w-screen-2xl">
-        <div tw="order-2 p-4 lg:(p-0 order-1)">
-          <div tw="w-40 md:w-64 mb-6">
+        <div tw="order-2 p-3 lg:(p-0 order-1)">
+          <div tw="w-40 md:w-64 mb-4 md:(mb-6)">
             <Logo />
           </div>
           <div>
             <h1 tw="font-display font-bold text-white text-3xl md:text-4xl lg:text-6xl mb-4">
               Streaming experiments in design&nbsp;and&nbsp;code
             </h1>
-            <div tw="space-x-4 flex mt-10">
+            <div tw="space-x-4 flex mt-6 md:(mt-10)">
               <a tw="block text-xl px-8 py-4 bg-white border-white bg-opacity-10 text-white font-bold rounded-xl backdrop-blur-3xl bg-blend-overlay shadow-lg transition hover:(bg-opacity-20)" href="https://twitch.tv/brettjay">
                 Twitch
               </a>
@@ -93,7 +93,7 @@ const IndexPage = () => (
               src="https://player.vimeo.com/video/680257424?h=e9cb07b3ac&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
-              allowFullscreen
+              allowFullScreen
               style={{
                 position: `absolute`,
                 top: 0,
